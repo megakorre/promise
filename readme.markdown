@@ -27,18 +27,18 @@ simple implementation of a promise to read a file
     
 a use of a generic algoritm like syncArray
 
-   var filePaths = ......; // some array of file paths
-   var files = ps.syncArray(map(filePaths, readFile));
+    var filePaths = ......; // some array of file paths
+    var files = ps.syncArray(map(filePaths, readFile));
    
 joining together 2 promises executing in parrallel
   
-   var res = asyncThing1().joinWith(asyncThing2(), function(a1, a2) {
-     return a1 + a2;
-   });
+    var res = asyncThing1().joinWith(asyncThing2(), function(a1, a2) {
+      return a1 + a2;
+    });
    
 using the context feture to deside wheter to log some data
 
-   var fetchUserProfile  = function(userId) {
+    var fetchUserProfile  = function(userId) {
       http.get("...some url?id=" + userId)
         .maps(parseUser, function(u) { return u.profileUrl; })
         .bind(http.get)
@@ -48,16 +48,16 @@ using the context feture to deside wheter to log some data
           }
           cont(data);
         });
-    };
+     };
     
-    ......
+     ......
     
-    var profile = fetchUserProfile(1)
-     .context("debug", true);
+     var profile = fetchUserProfile(1)
+      .context("debug", true);
     
-    profile(function(userProfile) {
-      ......
-    });
+     profile(function(userProfile) {
+       ......
+     });
 
 
 catching errors and responding to them
