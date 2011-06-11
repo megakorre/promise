@@ -1,4 +1,4 @@
-var ar = require("../lib");
+var ar = require("../lib/promise");
 
 var sys = require('sys');
 require("./color");
@@ -75,8 +75,8 @@ var runTests = function() {
 
 global.it = it;
 
-var promise = require("../lib").promise;
-var ps = require("../lib");
+var promise = require("../lib/promise").promise;
+var ps = require("../lib/promise");
 
 it("knows how to do a simple promise", function(cont) {
   var called = false;

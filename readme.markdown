@@ -39,7 +39,7 @@ joining together 2 promises executing in parrallel
 using the context feture to deside wheter to log some data
 
     var fetchUserProfile  = function(userId) {
-      http.get("...some url?id=" + userId)
+      return http.get("...some url?id=" + userId)
         .maps(parseUser, function(u) { return u.profileUrl; })
         .bind(http.get)
         .interact(function(data, cont) {
@@ -62,7 +62,15 @@ using the context feture to deside wheter to log some data
 
 catching errors and responding to them
 
-## todo
+    var refreshProfile = function(oldProfile) {
+      return http.get(oldProfile.url)
+        .catching("timeout.core", function(error) {
+          error.continueWith(oldProfile);
+        });
+    };
+  
+  
+  
 
 
 
