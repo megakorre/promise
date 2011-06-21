@@ -1,7 +1,12 @@
+/**
+   Promise Tests
+   ..... ..ssss. ... .. ..
+*/
+
 var ar = require("../lib/promise");
 
 var sys = require('sys');
-require("./color");
+require("../vendor/color");
 
 var tests = [];
 
@@ -135,6 +140,21 @@ it("kows how to do a simple map", function() {
   var called = false;
   b(function(d) {
     if(d == 3) called = true;
+  });
+  return called;
+});
+
+it("can use the maps function", function() {
+  var p = ps.result(1)
+    .maps(function(i) { return i + 1; },
+          function(i) { return i + 1; },
+          function(i) { return i + 1; },
+          function(i) { return i + 1; });
+  var called = false;
+  p(function(u) {
+    if(u == 5) {
+      called = true;
+    }
   });
   return called;
 });

@@ -181,10 +181,21 @@ extend(exports, {
     });
   },
 
+  /*
+    !! EXPERMANTAL
 
-  stream: function() {
-    
+    a stream a sequens of values
+    pushed and handeled by the 
+    promise
 
+    it takes a function witch takes a stream continuation
+    with the extra methods next and complete
+
+   */
+  stream: function(f) {
+    return promise(function(cont) {
+      cont([]);
+    });
   },
 
 

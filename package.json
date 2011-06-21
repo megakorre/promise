@@ -1,0 +1,7 @@
+{
+  "name": "promise",
+  "version": "0.0.1",
+  "description": "A Async Code Wrapper to help programming agenst async",
+  "author": "Patrik Kårlin <patrik.karlin@gmail.com>",
+  "main": "index"
+}
