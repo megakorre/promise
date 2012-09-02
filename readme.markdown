@@ -1,3 +1,5 @@
+# unmaintained and dead, use at your own risk :D
+
 # promise
 
 promise is a libary for doing async programming
